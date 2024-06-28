@@ -36,7 +36,6 @@ import { MenuOutlined } from "@ant-design/icons";
 // `;
 
 export const HeaderSection = styled("header")`
-  background-color: #597B73;
   padding: 1rem 0.5rem;
   width: 100%;
   height: auto;
@@ -108,7 +107,7 @@ export const Burger = styled("div")`
   @media only screen and (max-width: 1237px) {
     display: flex;
     justify-content: flex-end;
-    widht: 33%;
+    widht: 40%;
   }
 
   display: none;
@@ -129,7 +128,7 @@ export const Hidden = styled("div")`
 
   @media only screen and (max-width: 1237px) {
     display: flex;
-    widht: 33%;
+    widht: 40%;
   }
 `;
 

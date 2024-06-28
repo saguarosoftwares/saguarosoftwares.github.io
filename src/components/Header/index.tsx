@@ -41,7 +41,7 @@ const Header = ({ t, svgInNavbar }: any) => {
   useEffect(() => {
     const handleScroll = () => {
       const introElement = document.getElementById("intro");
-      const servicesPage = document.querySelector("#services"); // ASSUMED TO BE FIRST PAGE IN CONTENT BLOCK ...
+      const servicesPage = document.querySelector("#motto"); // TODO ASSUMED TO BE FIRST PAGE IN CONTENT BLOCK ...
       const navbar = document.querySelector("#navbar");
       const logo_icon = document.querySelector("#LOGO_ICON");
 
@@ -110,17 +110,17 @@ const Header = ({ t, svgInNavbar }: any) => {
         <CustomNavLinkSmall onClick={() => scrollTo('services')}>
           <Span>{t('SERVICES')}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo('mission')}>
-          <Span>{t('MISSION')}</Span>
+        <CustomNavLinkSmall onClick={() => scrollTo('process')}>
+          <Span>{t('PROCESS')}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo('about')}>
           <Span>{t('ABOUT')}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall
-          style={{ width: '180px' }}
+          style={{ width: 'auto' }}
           onClick={() => scrollTo('contact')}
         >
-          <Span>
+          <Span style={{ padding: '0.5rem 1rem' }}>
             <Button>{t("LET'S TALK!")}</Button>
           </Span>
         </CustomNavLinkSmall>
@@ -133,17 +133,17 @@ const Header = ({ t, svgInNavbar }: any) => {
 
 
   return (
-    <HeaderSection id={"navbar"} className={isFixed ? "fixed" : ""} ref={navbarRef}>
+    <HeaderSection id={"navbar"} className={isFixed ? "fixed" : ""} ref={navbarRef} style={{ backgroundColor: isFixed ? "transparent" : "#597B73" }}>
       <Container>
         <RowContainer /**justify="space-between" align="middle"*/>
 
-          <NotHidden style={{ width: '33%' }}>
+          <NotHidden style={{ width: '40%' }}>
             <LogoContainer to="/" aria-label="homepage" /**style={{ width: '33%' }}*/>
               {/* <SvgIcon src="LOGO_MOBILE.svg" width="auto" height="80px" /> */}
-              <SvgIcon src="company_name.svg" width="auto" height="50px" />
+              <SvgIcon src="company_name.svg" width="auto" height="auto" />
             </LogoContainer>
           </NotHidden>
-          <Hidden style={{ width: '33%' }}>
+          <Hidden style={{ width: '40%' }}>
             <span style={{ display: "flex", justifyContent: "flex-start", alignItems: 'center' }}/>
 
           </Hidden>
@@ -170,14 +170,14 @@ const Header = ({ t, svgInNavbar }: any) => {
 
           </SvgContainer>
 
-          <NotHidden style={{ width: '33%', zIndex: "500000"}}>
+          <NotHidden style={{ width: '40%', zIndex: "500000"}}>
             <div style={{ display: "flex", justifyContent: "flex-end", alignItems: 'center' }}>
             <MenuItem />            
 
             </div>
           </NotHidden>
 
-          <Burger onClick={showDrawer} style={{ width: '33%'}}>
+          <Burger onClick={showDrawer} style={{ width: '40%'}}>
             <Outline />
           </Burger>
 
